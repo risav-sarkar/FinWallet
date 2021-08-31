@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Nunito";
+  padding: 0 20px;
+  background-color: #03071e;
+  color: white;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+#root {
+  height: 100%;
+}
+
+main {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+button {
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+}
+
+.menuContainer .menu {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.menuContainer .menuLines {
+  height: 3px;
+  width: 25px;
+  margin-top: 5px;
+  background: white;
+  border-radius: 20px;
+}
+
+.menuContainer .menuContent {
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  right: 0;
+  top: 50px;
+}
+
+.menuContainer .menuContent button {
+  background-color: #c9184a;
+  padding: 10px;
+}
+
+.mainContainer {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btnContainer {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 20px;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: 100%;
+  grid-gap: 10px;
+}
+
+.btnContainer .addBtn {
+  background-color: #478f73;
+}
+
+.btnContainer .delBtn {
+  background-color: #c9184a;
+}
+
+.btnContainer .submitBtn {
+  background-color: #c9184a;
+}
+
+.btnContainer .cancelBtn {
+  background-color: transparent;
+  border: 2px solid #c9184a;
+}
+
+.styled-input {
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: #1a183b;
+  padding: 10px 20px 10px 20px;
+  font-size: 1.5em;
+}
+
+.styled-input input {
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  width: 100%;
+  color: white;
+  font-size: 1.2em;
+}
+
+.listContainer {
+  padding: 10px 0px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 10px;
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.listContainer .listItems {
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.listContainer .expenseItems {
+  background-color: #c9184a;
+}
+
+.listContainer .incomeItems {
+  background-color: #478f73;
+}
+
+.listContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.dashboardContainer {
+  padding: 0px 20px 20px 20px;
+}
+
+.dashboardContainer h1 {
+  font-size: 40px;
+}
+
+.dashboardContainer .monthDash {
+  background-color: #14213d;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.dashboardContainer .monthDash .monthDashGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  margin-top: 10px;
+}
+
+.dashboardContainer .monthDash .monthDashGrid .bar {
+  width: 2px;
+  height: 30px;
+  background-color: white;
+}
