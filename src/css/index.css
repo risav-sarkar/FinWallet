@@ -167,6 +167,9 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .listContainer .expenseItems {
@@ -239,14 +242,22 @@ button {
   border-radius: 10px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 30% 20%;
-      grid-template-columns: 50% 30% 20%;
+  -ms-grid-columns: 40% 35% 25%;
+      grid-template-columns: 40% 35% 25%;
+  place-items: center;
 }
 
 .historyContainer .listItems button {
   background-color: transparent;
   border: 2px solid white;
   padding: 5px 8px;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.historyContainer .listItems h1 {
+  -ms-grid-column-align: start;
+      justify-self: start;
 }
 
 .historyContainer .expenseItems {

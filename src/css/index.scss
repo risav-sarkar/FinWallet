@@ -142,6 +142,7 @@ button {
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   .expenseItems {
     background-color: $color4;
@@ -196,11 +197,16 @@ button {
     padding: 10px 20px;
     border-radius: 10px;
     display: grid;
-    grid-template-columns: 50% 30% 20%;
+    grid-template-columns: 40% 35% 25%;
+    place-items: center;
     button {
       background-color: transparent;
       border: 2px solid white;
       padding: 5px 8px;
+      justify-self: end;
+    }
+    h1 {
+      justify-self: start;
     }
   }
   .expenseItems {
