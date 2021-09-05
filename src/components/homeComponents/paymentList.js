@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const PaymentList = () => {
   let data = [];
   const dataFromLocalStorage = JSON.parse(localStorage.getItem("data"));
@@ -14,7 +16,13 @@ const PaymentList = () => {
 
   return (
     <div className="listContainer">
-      <h3>History</h3>
+      <div className="listHeader">
+        <h3>History</h3>
+        <Link to="/history">
+          <button>View All</button>
+        </Link>
+      </div>
+
       {arrTemp.map((items) => {
         const { name, amount, id } = items;
         return (
@@ -34,23 +42,3 @@ const PaymentList = () => {
 };
 
 export default PaymentList;
-
-/*
-{data
-        .slice(0)
-        .reverse()
-        .map((items) => {
-          const { name, amount, id } = items;
-          return (
-            <div
-              key={id}
-              className={
-                "listItems " + (amount < 0 ? "expenseItems" : "incomeItems")
-              }
-            >
-              <h1>{name}</h1>
-              <h4>₹ {Math.abs(amount)}</h4>
-            </div>
-          );
-        })}
-*/

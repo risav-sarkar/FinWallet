@@ -127,7 +127,16 @@ button {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
-
+  .listHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      background-color: transparent;
+      border: 2px solid white;
+      padding: 5px 8px;
+    }
+  }
   .listItems {
     padding: 10px 20px;
     border-radius: 10px;
@@ -140,9 +149,6 @@ button {
   .incomeItems {
     background-color: $color5;
   }
-}
-.listContainer::-webkit-scrollbar {
-  display: none;
 }
 
 .dashboardContainer {
@@ -168,5 +174,39 @@ button {
         background-color: white;
       }
     }
+  }
+}
+
+.historyContainer {
+  padding: 10px 0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  .listHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      background-color: transparent;
+      border: 2px solid white;
+      padding: 5px 8px;
+    }
+  }
+  .listItems {
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 50% 30% 20%;
+    button {
+      background-color: transparent;
+      border: 2px solid white;
+      padding: 5px 8px;
+    }
+  }
+  .expenseItems {
+    background-color: $color4;
+  }
+  .incomeItems {
+    background-color: $color5;
   }
 }

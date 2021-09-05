@@ -140,6 +140,24 @@ button {
   grid-gap: 10px;
 }
 
+.listContainer .listHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.listContainer .listHeader button {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 5px 8px;
+}
+
 .listContainer .listItems {
   padding: 10px 20px;
   border-radius: 10px;
@@ -157,10 +175,6 @@ button {
 
 .listContainer .incomeItems {
   background-color: #478f73;
-}
-
-.listContainer::-webkit-scrollbar {
-  display: none;
 }
 
 .dashboardContainer {
@@ -191,4 +205,54 @@ button {
   width: 2px;
   height: 30px;
   background-color: white;
+}
+
+.historyContainer {
+  padding: 10px 0px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.historyContainer .listHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.historyContainer .listHeader button {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 5px 8px;
+}
+
+.historyContainer .listItems {
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 30% 20%;
+      grid-template-columns: 50% 30% 20%;
+}
+
+.historyContainer .listItems button {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 5px 8px;
+}
+
+.historyContainer .expenseItems {
+  background-color: #c9184a;
+}
+
+.historyContainer .incomeItems {
+  background-color: #478f73;
 }
