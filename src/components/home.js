@@ -20,7 +20,7 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name != "" && amount > 0) {
+    if (name !== "" && amount > 0) {
       data.push({
         name: name,
         amount: addBtn === 1 ? parseInt(amount) : parseInt(amount) * -1,

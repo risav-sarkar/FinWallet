@@ -8,7 +8,7 @@ const History = () => {
   if (dataFromLocalStorage) {
     data = dataFromLocalStorage;
   }
-
+  // eslint-disable-next-line
   const [render, setRender] = useState([]);
 
   return (
