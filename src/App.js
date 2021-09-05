@@ -10,7 +10,6 @@ function App() {
     data = dataFromLocalStorage;
   }
   console.log(data);
-  //localStorage.setItem("data", JSON.stringify([]));
 
   const [addBtn, setAddBtn] = useState(0);
   const [delBtn, setDelBtn] = useState(0);

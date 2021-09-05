@@ -5,6 +5,7 @@ const Dashboard = () => {
   if (dataFromLocalStorage) {
     data = dataFromLocalStorage;
   }
+
   let balance = 0;
   let incomeMonthly = 0;
   let expenseMonthly = 0;
@@ -17,6 +18,7 @@ const Dashboard = () => {
       expenseMonthly += Math.abs(data[i].amount);
     }
   }
+
   return (
     <div className="dashboardContainer">
       <h4>Current Balance</h4>
