@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Dashboard from "./homeComponents/dashboard.js";
-import PaymentList from "./homeComponents/paymentList.js";
+import { Link } from "react-router-dom";
+import Dashboard from "./components/dashboard.js";
+import PaymentList from "./components/paymentList.js";
 
 const Home = () => {
   let data = [];
@@ -88,7 +89,18 @@ const Home = () => {
               </button>
               {menuBtn === 1 ? (
                 <div className="menuContent">
+                  <Link to="/investment">
+                    <button
+                      className="investBtn"
+                      onClick={() => {
+                        setMenuBtn(0);
+                      }}
+                    >
+                      Investment
+                    </button>
+                  </Link>
                   <button
+                    className="resetBtn"
                     onClick={() => {
                       localStorage.setItem("data", JSON.stringify([]));
                       setMenuBtn(0);

@@ -17,7 +17,7 @@ const PaymentList = () => {
   return (
     <div className="listContainer">
       <div className="listHeader">
-        <h3>History</h3>
+        <h3>Recent</h3>
         <Link to="/history">
           <button>View All</button>
         </Link>
