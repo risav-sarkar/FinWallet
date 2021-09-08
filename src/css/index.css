@@ -281,3 +281,90 @@ button {
 .historyContainer .incomeItems {
   background-color: #478f73;
 }
+
+.signinContainer {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.signinContainer .signinHeader h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.signinContainer .signinHeader p {
+  margin-bottom: 5px;
+}
+
+.signinContainer .signinHeader input {
+  background-color: rgba(128, 128, 128, 0.404);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 9px 30px 8px 20px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.signinContainer .signinHeader .warnimess {
+  padding-top: 7px;
+  text-align: center;
+}
+
+.signinContainer .signinBtn {
+  margin-top: 10px;
+  background-color: #0095f6;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  padding: 10px 50px;
+  font-size: 14px;
+}
+
+.signinContainer .signup {
+  margin-top: 15px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.signinContainer .signup .linksign {
+  color: #f6b400;
+  text-decoration: none;
+}
+
+.signinContainer .forgetpass {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.signinContainer .forgetpass * {
+  text-decoration: none;
+  color: white;
+}
+
+.signinContainer .googlecont .googlebtn {
+  background-color: white;
+  color: black;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: none;
+  padding: 20px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.signinContainer .googlecont .googleimg {
+  padding: 1px 0;
+}
+
+.signinContainer .googlecont .loginwithg {
+  padding-left: 10px;
+}

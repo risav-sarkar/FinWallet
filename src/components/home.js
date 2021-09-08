@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Dashboard from "./components/dashboard.js";
-import PaymentList from "./components/paymentList.js";
+import Dashboard from "./mainComponents/dashboard.js";
+import PaymentList from "./mainComponents/paymentList.js";
 
-const Home = () => {
+export const Home = () => {
   let data = [];
   const dataFromLocalStorage = JSON.parse(localStorage.getItem("data"));
 
@@ -137,5 +137,3 @@ const Home = () => {
     </main>
   );
 };
-
-export default Home;

@@ -226,3 +226,75 @@ button {
     background-color: $color5;
   }
 }
+
+.signinContainer {
+  display: grid;
+  place-items: center;
+  .signinHeader {
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 5px;
+    }
+    input {
+      background-color: rgba(128, 128, 128, 0.404);
+      color: white;
+      border: none;
+      border-radius: 3px;
+      padding: 9px 30px 8px 20px;
+      margin-bottom: 10px;
+      outline: none;
+    }
+    .warnimess {
+      padding-top: 7px;
+      text-align: center;
+    }
+  }
+  .signinBtn {
+    margin-top: 10px;
+    background-color: #0095f6;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    padding: 10px 50px;
+    font-size: 14px;
+  }
+  .signup {
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: center;
+    .linksign {
+      color: #f6b400;
+      text-decoration: none;
+    }
+  }
+  .forgetpass {
+    margin-top: 10px;
+    text-align: center;
+    * {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  .googlecont {
+    .googlebtn {
+      background-color: white;
+      color: black;
+      margin-top: 20px;
+      border-radius: 10px;
+      border: none;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .googleimg {
+      padding: 1px 0;
+    }
+    .loginwithg {
+      padding-left: 10px;
+    }
+  }
+}

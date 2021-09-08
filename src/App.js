@@ -1,18 +1,30 @@
-import Home from "./components/home";
-import History from "./components/history";
-import Investment from "./components/investment";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./css/index.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Signup } from "./Components/signup";
+import { Signin } from "./Components/signin";
+import { Forgotpass } from "./Components/forgotpass";
+import { Home } from "./Components/home";
+import { History } from "./Components/history";
+import { Investment } from "./Components/investment";
+import { AuthProvider } from "./Components/firebase/AuthContext";
 
-const App = () => {
+function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/investment" element={<Investment />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <AuthProvider>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/forgot" component={Forgotpass} />
+            <Route path="/signin" component={Signin} />
+            <Route path="/history" component={History} />
+            <Route path="/investment" component={Investment} />
+          </Switch>
+        </AuthProvider>
+      </Router>
+    </>
   );
-};
+}
 
 export default App;

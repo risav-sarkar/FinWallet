@@ -1,6 +1,6 @@
-import InvestmentDashboard from "./components/investmentDashboard";
+import InvestmentDashboard from "./mainComponents/investmentDashboard";
 
-const Investment = () => {
+export const Investment = () => {
   return (
     <main>
       <div className="mainContainer">
@@ -9,5 +9,3 @@ const Investment = () => {
     </main>
   );
 };
-
-export default Investment;

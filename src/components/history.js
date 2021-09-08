@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const History = () => {
+export const History = () => {
   let data = [];
   const dataFromLocalStorage = JSON.parse(localStorage.getItem("data"));
 
@@ -57,5 +57,3 @@ const History = () => {
     </main>
   );
 };
-
-export default History;
