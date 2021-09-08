@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Dashboard from "./mainComponents/dashboard.js";
 import PaymentList from "./mainComponents/paymentList.js";
+import Header from "./mainComponents/header.js";
 
 export const Home = () => {
   let data = [];
@@ -99,18 +100,20 @@ export const Home = () => {
                       Investment
                     </button>
                   </Link>
-                  <button
-                    className="resetBtn"
-                    onClick={() => {
-                      localStorage.setItem("data", JSON.stringify([]));
-                      setMenuBtn(0);
-                    }}
-                  >
-                    Reset All
-                  </button>
+                  <Link to="/account">
+                    <button
+                      className="investBtn"
+                      onClick={() => {
+                        setMenuBtn(0);
+                      }}
+                    >
+                      Account
+                    </button>
+                  </Link>
                 </div>
               ) : null}
             </div>
+            <Header />
             <Dashboard />
             <PaymentList />
             <div className="btnContainer">

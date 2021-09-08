@@ -47,6 +47,11 @@ button {
   color: white;
 }
 
+.headerText {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
 .menuContainer .menu {
   background-color: transparent;
   border: none;
@@ -79,10 +84,7 @@ button {
 
 .menuContainer .menuContent button {
   padding: 8px;
-}
-
-.menuContainer .menuContent .resetBtn {
-  background-color: #c9184a;
+  width: 100%;
 }
 
 .menuContainer .menuContent .investBtn {
@@ -367,4 +369,27 @@ button {
 
 .signinContainer .googlecont .loginwithg {
   padding-left: 10px;
+}
+
+.accountContainer {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.accountContainer .btnContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  max-width: 200px;
+}
+
+.accountContainer button {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  margin-bottom: 10px;
 }

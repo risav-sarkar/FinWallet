@@ -45,7 +45,10 @@ button {
   cursor: pointer;
   color: white;
 }
-
+.headerText {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
 .menuContainer {
   .menu {
     background-color: transparent;
@@ -73,9 +76,7 @@ button {
     top: 50px;
     button {
       padding: 8px;
-    }
-    .resetBtn {
-      background-color: $color4;
+      width: 100%;
     }
     .investBtn {
       color: black;
@@ -296,5 +297,22 @@ button {
     .loginwithg {
       padding-left: 10px;
     }
+  }
+}
+
+.accountContainer {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  .btnContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 200px;
+  }
+  button {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin-bottom: 10px;
   }
 }

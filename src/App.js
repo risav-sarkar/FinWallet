@@ -6,6 +6,7 @@ import { Forgotpass } from "./Components/forgotpass";
 import { Home } from "./Components/home";
 import { History } from "./Components/history";
 import { Investment } from "./Components/investment";
+import { Account } from "./Components/account";
 import { AuthProvider } from "./Components/firebase/AuthContext";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/signin" component={Signin} />
             <Route path="/history" component={History} />
             <Route path="/investment" component={Investment} />
+            <Route path="/account" component={Account} />
           </Switch>
         </AuthProvider>
       </Router>
