@@ -8,7 +8,7 @@ export const Signup = () => {
     color: "red",
     fontSize: "13px",
   };
-
+  
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -17,6 +17,7 @@ export const Signup = () => {
   const mail = useRef("");
   const userid = useRef("");
 
+  // const { signin } = useAuth();
   const { signup } = useAuth();
   const history = useHistory();
 
@@ -32,6 +33,11 @@ export const Signup = () => {
     signup(email, password, fullName)
       .then((ref) => {
         setLoading(false);
+        // signin(email,password)
+        // const update = {
+        //   displayName: fullName,
+        // }
+        // auth.currentUser.updateProfile(update);
         history.push("/");
       })
       .catch((err) => {
