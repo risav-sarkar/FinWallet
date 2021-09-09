@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import Dashboard from "./mainComponents/dashboard.js";
 import PaymentList from "./mainComponents/paymentList.js";
 import Header from "./mainComponents/header.js";
+import { auth } from "./firebase/firebase";
+import { useAuth } from './firebase/AuthContext';
+import { useHistory } from "react-router-dom";
 
 export const Home = () => {
   let data = [];
@@ -35,6 +38,29 @@ export const Home = () => {
       setDelBtn(0);
     } else alert("Enter Correct Name and Amount!");
   };
+
+  const history = useHistory();
+  const { signout } = useAuth();
+  const handleSignout = () => {
+    signout(); 
+    history.push('/signin');
+  };
+
+  const [btn1,setBtn1] = useState('Signin')
+  const [btn2,setBtn2] = useState('Signup')
+  const [btn1link,setBtn1Link] = useState('/signin')
+  const [btn2link,setBtn2Link] = useState('/signup')
+  const [userCheck,setUserCheck] = useState(0)
+  const checkUser = auth.onAuthStateChanged((user) =>{
+    if (user){
+      setBtn1('Account')
+      setBtn1Link('/account')
+      setBtn2('Logout')
+      setBtn2Link('/signin')
+      setUserCheck(1)
+    }
+  })
+  checkUser();
 
   return (
     <main>
@@ -100,14 +126,24 @@ export const Home = () => {
                       Investment
                     </button>
                   </Link>
-                  <Link to="/account">
+                  <Link to={btn1link}>
                     <button
                       className="investBtn"
                       onClick={() => {
                         setMenuBtn(0);
                       }}
                     >
-                      Account
+                      {btn1}
+                    </button>
+                  </Link>
+                  <Link to={btn2link}>
+                    <button
+                      className="investBtn"
+                      onClick={() => {
+                        (userCheck===1? handleSignout():setMenuBtn(0));
+                      }}
+                    >
+                      {btn2}
                     </button>
                   </Link>
                 </div>

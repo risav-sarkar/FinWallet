@@ -12,7 +12,7 @@ export function AuthProvider({ children }) {
       auth
         .createUserWithEmailAndPassword(email, password)
         .then((ref) => {
-          ref.user.updateProfile({
+          auth.currentUser.updateProfile({
             displayName: fullName,
           });
           resolve(ref);
