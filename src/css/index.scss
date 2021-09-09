@@ -15,18 +15,13 @@ html {
   width: 100%;
 }
 body {
-  height: 100%;
-  width: 100%;
   font-family: "Nunito";
-  padding: 0 20px;
+  padding: 20px;
   background-color: $color2;
   color: rgb(255, 255, 255);
 }
 h1 {
   font-size: 20px;
-}
-#root {
-  height: 100%;
 }
 main {
   position: relative;
@@ -314,5 +309,60 @@ button {
     color: black;
     padding: 10px;
     margin-bottom: 10px;
+  }
+}
+
+.crypto {
+  h1 {
+    font-size: 30px;
+  }
+  .coinContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    .coin {
+      background-color: #14213d;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: 40% 60%;
+      .coinHeader {
+        padding: 15px;
+        display: grid;
+        grid-template-columns: 1fr;
+        place-items: center;
+        grid-gap: 10px;
+        text-align: center;
+        img {
+          height: 60px;
+          width: 60px;
+        }
+      }
+      .coinBody {
+        background-color: #eeeeee;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        place-items: center;
+        .coinPrice {
+          color: black;
+          text-align: center;
+          .negPrice {
+            color: red;
+          }
+          .posPrice {
+            color: green;
+          }
+        }
+        .coinDetails {
+          height: 100%;
+          width: 100%;
+          background-color: #f6b400;
+          border-radius: 10px;
+          padding: 10px;
+          display: grid;
+          place-items: center;
+        }
+      }
+    }
   }
 }

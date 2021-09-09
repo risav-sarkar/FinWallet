@@ -12,20 +12,14 @@ html {
 }
 
 body {
-  height: 100%;
-  width: 100%;
   font-family: "Nunito";
-  padding: 0 20px;
+  padding: 20px;
   background-color: #03071e;
   color: white;
 }
 
 h1 {
   font-size: 20px;
-}
-
-#root {
-  height: 100%;
 }
 
 main {
@@ -392,4 +386,75 @@ button {
   color: black;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+.crypto h1 {
+  font-size: 30px;
+}
+
+.crypto .coinContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+.crypto .coinContainer .coin {
+  background-color: #14213d;
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
+}
+
+.crypto .coinContainer .coin .coinHeader {
+  padding: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  place-items: center;
+  grid-gap: 10px;
+  text-align: center;
+}
+
+.crypto .coinContainer .coin .coinHeader img {
+  height: 60px;
+  width: 60px;
+}
+
+.crypto .coinContainer .coin .coinBody {
+  background-color: #eeeeee;
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  place-items: center;
+}
+
+.crypto .coinContainer .coin .coinBody .coinPrice {
+  color: black;
+  text-align: center;
+}
+
+.crypto .coinContainer .coin .coinBody .coinPrice .negPrice {
+  color: red;
+}
+
+.crypto .coinContainer .coin .coinBody .coinPrice .posPrice {
+  color: green;
+}
+
+.crypto .coinContainer .coin .coinBody .coinDetails {
+  height: 100%;
+  width: 100%;
+  background-color: #f6b400;
+  border-radius: 10px;
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
