@@ -15,10 +15,16 @@ html {
   width: 100%;
 }
 body {
+  height: 100%;
+  width: 100%;
   font-family: "Nunito";
-  padding: 20px;
+  padding: 0 20px;
   background-color: $color2;
   color: rgb(255, 255, 255);
+}
+#root {
+  height: 100%;
+  width: 100%;
 }
 h1 {
   font-size: 20px;
@@ -85,7 +91,7 @@ button {
   position: relative;
   max-width: 400px;
   width: 100%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .btnContainer {
@@ -312,11 +318,13 @@ button {
   }
 }
 
-.crypto {
+.investComponents {
+  padding: 20px 0;
   h1 {
     font-size: 30px;
   }
   .coinContainer {
+    margin-top: 10px;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 15px;

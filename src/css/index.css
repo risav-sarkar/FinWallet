@@ -12,10 +12,17 @@ html {
 }
 
 body {
+  height: 100%;
+  width: 100%;
   font-family: "Nunito";
-  padding: 20px;
+  padding: 0 20px;
   background-color: #03071e;
   color: white;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -91,7 +98,7 @@ button {
   position: relative;
   max-width: 400px;
   width: 100%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .btnContainer {
@@ -388,11 +395,16 @@ button {
   margin-bottom: 10px;
 }
 
-.crypto h1 {
+.investComponents {
+  padding: 20px 0;
+}
+
+.investComponents h1 {
   font-size: 30px;
 }
 
-.crypto .coinContainer {
+.investComponents .coinContainer {
+  margin-top: 10px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -400,7 +412,7 @@ button {
   grid-gap: 15px;
 }
 
-.crypto .coinContainer .coin {
+.investComponents .coinContainer .coin {
   background-color: #14213d;
   border-radius: 10px;
   display: -ms-grid;
@@ -409,7 +421,7 @@ button {
       grid-template-columns: 40% 60%;
 }
 
-.crypto .coinContainer .coin .coinHeader {
+.investComponents .coinContainer .coin .coinHeader {
   padding: 15px;
   display: -ms-grid;
   display: grid;
@@ -420,12 +432,12 @@ button {
   text-align: center;
 }
 
-.crypto .coinContainer .coin .coinHeader img {
+.investComponents .coinContainer .coin .coinHeader img {
   height: 60px;
   width: 60px;
 }
 
-.crypto .coinContainer .coin .coinBody {
+.investComponents .coinContainer .coin .coinBody {
   background-color: #eeeeee;
   border-radius: 10px;
   display: -ms-grid;
@@ -435,20 +447,20 @@ button {
   place-items: center;
 }
 
-.crypto .coinContainer .coin .coinBody .coinPrice {
+.investComponents .coinContainer .coin .coinBody .coinPrice {
   color: black;
   text-align: center;
 }
 
-.crypto .coinContainer .coin .coinBody .coinPrice .negPrice {
+.investComponents .coinContainer .coin .coinBody .coinPrice .negPrice {
   color: red;
 }
 
-.crypto .coinContainer .coin .coinBody .coinPrice .posPrice {
+.investComponents .coinContainer .coin .coinBody .coinPrice .posPrice {
   color: green;
 }
 
-.crypto .coinContainer .coin .coinBody .coinDetails {
+.investComponents .coinContainer .coin .coinBody .coinDetails {
   height: 100%;
   width: 100%;
   background-color: #f6b400;

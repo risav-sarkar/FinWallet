@@ -15,9 +15,11 @@ const InvestmentDashboard = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  // max 2 decimal
   function round(num) {
     return Math.round((num + Number.EPSILON) * 100) / 100;
   }
+
   function convertToInternationalCurrencySystem(labelValue) {
     // Nine Zeroes for Billions
     return Math.abs(Number(labelValue)) >= 1.0e9
@@ -31,27 +33,35 @@ const InvestmentDashboard = () => {
       : Math.abs(Number(labelValue));
   }
 
-  console.log(coins);
   return (
-    <div className="crypto">
-      <h1>Crypto</h1>
-
-      <div className="coinContainer">
-        {coins.map((coin) => {
-          return (
-            <Crypto
-              key={coin.id}
-              name={coin.name}
-              image={coin.image}
-              price={round(coin.current_price)}
-              volume={convertToInternationalCurrencySystem(coin.total_volume)}
-              priceChange={round(coin.price_change_percentage_24h)}
-              mkt={convertToInternationalCurrencySystem(coin.market_cap)}
-            />
-          );
-        })}
+    <>
+      <div className="investComponents">
+        <h1>Crypto</h1>
+        <div className="coinContainer">
+          {coins.map((coin) => {
+            return (
+              <Crypto
+                key={coin.id}
+                name={coin.name}
+                image={coin.image}
+                price={round(coin.current_price)}
+                volume={convertToInternationalCurrencySystem(coin.total_volume)}
+                priceChange={round(coin.price_change_percentage_24h)}
+                mkt={convertToInternationalCurrencySystem(coin.market_cap)}
+              />
+            );
+          })}
+        </div>
       </div>
-    </div>
+      <div className="investComponents">
+        <h1>Stocks</h1>
+        <div className="stocksContainer"></div>
+      </div>
+      <div className="investComponents">
+        <h1>Mutual Funds</h1>
+        <div className="mfContainer"></div>
+      </div>
+    </>
   );
 };
 
