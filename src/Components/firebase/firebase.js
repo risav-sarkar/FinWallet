@@ -11,3 +11,26 @@ const firebaseConfig = {
 };
 const myApp = firebase.initializeApp(firebaseConfig);
 export const auth = myApp.auth();
+
+const googleProvider = new firebase.auth.GoogleAuthProvider()
+export const signinGoogle = () =>{
+  auth.signInWithPopup(googleProvider)
+  .then((res) =>{
+    console.log(res.user)
+  })
+  .catch(function(error) {
+    console.log(error.message)
+    if (error.code==='auth/account-exists-with-different-credential'){
+      var pendingCred = error.credential;
+      var email = error.email;
+      auth.fetchProvidersForEmail(email).then(function (methods) {
+        if (methods[0] === 'password'){
+          var password = prompt("Enter your password");
+          auth.signInWithEmailAndPassword(email, password).then(function(result){
+            return result.user.linkWithCredential(pendingCred);
+          })
+        }
+      })
+    }
+  })
+}
