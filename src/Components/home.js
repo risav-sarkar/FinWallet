@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Dashboard from "./mainComponents/dashboard.js";
 import PaymentList from "./mainComponents/paymentList.js";
@@ -20,15 +20,18 @@ export const Home = () => {
   const [delBtn, setDelBtn] = useState(0);
   const [menuBtn, setMenuBtn] = useState(0);
 
-  const [name, setName] = useState("");
-  const [amount, setAmount] = useState("");
+  const name = useRef("");
+  const amount = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name !== "" && amount > 0) {
+    if (parseInt(amount.current.value) > 0) {
       data.push({
-        name: name,
-        amount: addBtn === 1 ? parseInt(amount) : parseInt(amount) * -1,
+        name: name.current.value,
+        amount:
+          addBtn === 1
+            ? parseInt(amount.current.value)
+            : parseInt(amount.current.value) * -1,
         id: data.length,
         month: new Date().getMonth(),
       });
@@ -62,20 +65,11 @@ export const Home = () => {
             <div className="inputFields">
               <div className="styled-input">
                 <p>Name</p>
-                <input
-                  type="text"
-                  name="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
+                <input type="text" ref={name} required />
               </div>
               <div className="styled-input">
                 <p>Amount</p>
-                <input
-                  type="number"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
-                />
+                <input type="number" ref={amount} required />
               </div>
             </div>
             <div className="btnContainer">
