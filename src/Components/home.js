@@ -12,12 +12,15 @@ export const Home = () => {
   const database = Firebase.database();
 
   const [userCheck, setUserCheck] = useState(0);
+  const history = useHistory();
   const [userID, setUserID] = useState("");
   const checkUser = auth.onAuthStateChanged((user) => {
     if (user) {
       setUserCheck(1);
       setUserID(user.uid);
     }
+    else
+      history.push('/signin')
   });
   checkUser();
 
@@ -47,7 +50,6 @@ export const Home = () => {
     setDelBtn(0);
   };
 
-  const history = useHistory();
   const { signout } = useAuth();
   const handleSignout = () => {
     signout();
