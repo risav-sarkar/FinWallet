@@ -1,31 +1,24 @@
 import { Link } from "react-router-dom";
-import Firebase from 'firebase'
+import Firebase from "firebase";
 import { auth } from "../firebase/firebase";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const PaymentList = () => {
-
   const database = Firebase.database();
-  // eslint-disable-next-line
-  const [userCheck, setUserCheck] = useState(0);
-  const checkUser = auth.onAuthStateChanged((user) => {
-    if (user) {
-      setUserCheck(1);
-      const dataRef = database.ref(user.uid)
-      dataRef.on("value", function(snapshot) {
-        console.log(snapshot.val())
-        }, function (error) {
-            console.log("Error: " + error.code);
-          });
-    }
-  });
-  checkUser();
+  const [userdata, setUserdata] = useState({});
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      database.ref(user.uid).once("value", function (snapshot) {
+        setUserdata(snapshot.val());
+      });
+    });
+    // eslint-disable-next-line
+  }, []);
 
   let data = [];
-  const dataFromLocalStorage = JSON.parse(localStorage.getItem("data"));
-
-  if (dataFromLocalStorage) {
-    data = dataFromLocalStorage;
+  for (let key in userdata) {
+    let obj = userdata[key];
+    data.push(obj);
   }
 
   let arrTemp = [];
@@ -33,6 +26,7 @@ const PaymentList = () => {
   while (f >= 0 && data.length - f <= 5) {
     arrTemp.push(data[f--]);
   }
+  f = 0;
 
   return (
     <div className="listContainer">
@@ -42,12 +36,11 @@ const PaymentList = () => {
           <button>View All</button>
         </Link>
       </div>
-
       {arrTemp.map((items) => {
-        const { name, amount, id } = items;
+        const { name, amount } = items;
         return (
           <div
-            key={id}
+            key={Object.keys(userdata)[f++]}
             className={
               "listItems " + (amount < 0 ? "expenseItems" : "incomeItems")
             }

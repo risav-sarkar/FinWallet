@@ -6,98 +6,46 @@ import Header from "./mainComponents/header.js";
 import { auth } from "./firebase/firebase";
 import { useAuth } from "./firebase/AuthContext";
 import { useHistory } from "react-router-dom";
-import Firebase from 'firebase'
+import Firebase from "firebase";
 
 export const Home = () => {
-
-
   const database = Firebase.database();
 
   const [userCheck, setUserCheck] = useState(0);
-  const [userID, setUserID] = useState('')
+  const [userID, setUserID] = useState("");
   const checkUser = auth.onAuthStateChanged((user) => {
     if (user) {
       setUserCheck(1);
-      setUserID(user.uid)
+      setUserID(user.uid);
     }
   });
   checkUser();
 
-  let data = [];
-  const dataFromLocalStorage = JSON.parse(localStorage.getItem("data"));
-
-  if (dataFromLocalStorage) {
-    data = dataFromLocalStorage;
-  }
-  console.log(data);
-
   const [addBtn, setAddBtn] = useState(0);
   const [delBtn, setDelBtn] = useState(0);
   const [menuBtn, setMenuBtn] = useState(0);
-  // const [objLen, setObjLen] = useState(0);
 
   const name = useRef("");
   const amount = useRef(null);
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if(parseInt(amount.current.value) > 0 && userCheck===1){
-      const dataRef = database.ref(userID).push();
-      
-      dataRef.set({
-        userID,
-        name: name.current.value,
-        amount:
-          addBtn === 1
-            ? parseInt(amount.current.value)
-            : parseInt(amount.current.value) * -1,
-        // id: objLen,
-        month: new Date().getMonth(),
-      })
-      history.push(`/account`);
-    }
-    else{
-      if(parseInt(amount.current.value) > 0){
-        data.push({
-          name: name.current.value,
-          amount:
-            addBtn === 1
-              ? parseInt(amount.current.value)
-              : parseInt(amount.current.value) * -1,
-          id: data.length,
-          month: new Date().getMonth(),
-        });
-  
-        localStorage.setItem("data", JSON.stringify(data));
-        setAddBtn(0);
-        setDelBtn(0);
-      }
-      else
-        alert("Enter Correct Name and Amount!");
-    }
-  } 
+    const dataRef = database.ref(userID).push();
+    dataRef.set({
+      userID,
+      name: name.current.value,
+      amount:
+        addBtn === 1
+          ? parseInt(amount.current.value)
+          : parseInt(amount.current.value) * -1,
+      // id: objLen,
+      month: new Date().getMonth(),
+    });
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (parseInt(amount.current.value) > 0 && userCheck===1) {
-  //     data.push({
-  //       name: name.current.value,
-  //       amount:
-  //         addBtn === 1
-  //           ? parseInt(amount.current.value)
-  //           : parseInt(amount.current.value) * -1,
-  //       id: data.length,
-  //       month: new Date().getMonth(),
-  //     });
-
-  //     localStorage.setItem("data", JSON.stringify(data));
-  //     setAddBtn(0);
-  //     setDelBtn(0);
-  //   }
- 
-  //   else 
-  //     alert("Enter Correct Name and Amount!");
-  // };
+    history.push(`/`);
+    setAddBtn(0);
+    setDelBtn(0);
+  };
 
   const history = useHistory();
   const { signout } = useAuth();

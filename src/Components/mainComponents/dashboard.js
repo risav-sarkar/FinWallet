@@ -1,11 +1,22 @@
+import Firebase from "firebase";
+import { auth } from "../firebase/firebase";
+import { useEffect, useState } from "react";
 const Dashboard = () => {
-
+  const database = Firebase.database();
+  const [userdata, setUserdata] = useState({});
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      database.ref(user.uid).once("value", function (snapshot) {
+        setUserdata(snapshot.val());
+      });
+    });
+    // eslint-disable-next-line
+  }, []);
 
   let data = [];
-  const dataFromLocalStorage = JSON.parse(localStorage.getItem("data"));
-
-  if (dataFromLocalStorage) {
-    data = dataFromLocalStorage;
+  for (let key in userdata) {
+    let obj = userdata[key];
+    data.push(obj);
   }
 
   let balance = 0;

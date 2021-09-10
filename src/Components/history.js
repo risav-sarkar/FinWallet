@@ -1,15 +1,27 @@
-import { useState } from "react";
+import Firebase from "firebase";
+import { auth } from "./firebase/firebase";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const History = () => {
+  const database = Firebase.database();
+  const [userdata, setUserdata] = useState({});
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      database.ref(user.uid).once("value", function (snapshot) {
+        setUserdata(snapshot.val());
+      });
+    });
+    // eslint-disable-next-line
+  }, []);
+  let f = 0;
   let data = [];
-  const dataFromLocalStorage = JSON.parse(localStorage.getItem("data"));
-
-  if (dataFromLocalStorage) {
-    data = dataFromLocalStorage;
+  for (let key in userdata) {
+    let obj = userdata[key];
+    data.push(obj);
+    f++;
   }
-  // eslint-disable-next-line
-  const [render, setRender] = useState([]);
+  f -= 1;
 
   return (
     <main>
@@ -25,26 +37,25 @@ export const History = () => {
             .slice(0)
             .reverse()
             .map((items) => {
-              const { name, amount, id } = items;
+              const { name, amount } = items;
+              let g = f;
               return (
                 <div
-                  key={id}
-                  className={
-                    "listItems " + (amount < 0 ? "expenseItems" : "incomeItems")
-                  }
+                  key={Object.keys(userdata)[f--]}
+                  className={`listItems ${
+                    amount < 0 ? "expenseItems" : "incomeItems"
+                  }`}
                 >
                   <h1>{name}</h1>
                   <h4>₹ {Math.abs(amount)}</h4>
                   <button
                     onClick={() => {
-                      data.splice(id, 1);
-                      let f = 0;
-                      // eslint-disable-next-line
-                      data.map((n) => {
-                        n.id = f++;
+                      auth.onAuthStateChanged((user) => {
+                        database
+                          .ref(user.uid)
+                          .child(Object.keys(userdata)[g])
+                          .remove();
                       });
-                      localStorage.setItem("data", JSON.stringify(data));
-                      setRender([]);
                     }}
                   >
                     Delete
@@ -57,3 +68,4 @@ export const History = () => {
     </main>
   );
 };
+//database.ref(user.uid).child(Object.keys(userdata)[f - 1]) .remove();
