@@ -22,6 +22,7 @@ export const Account = () => {
 
   const handleRemove = (e) => {
     e.preventDefault();
+    // eslint-disable-next-line
     const dataRef = database.ref(userID).remove();
     history.push('/')
   }
