@@ -1,4 +1,6 @@
 const Dashboard = () => {
+
+
   let data = [];
   const dataFromLocalStorage = JSON.parse(localStorage.getItem("data"));
 

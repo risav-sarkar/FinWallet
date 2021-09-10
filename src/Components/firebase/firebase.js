@@ -1,16 +1,20 @@
 import firebase from "firebase";
+import "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDr7UEGfffcjrDnS9ky4wS1aYJLaOfqt3U",
-  authDomain: "wallet-manager-33200.firebaseapp.com",
-  projectId: "wallet-manager-33200",
-  storageBucket: "wallet-manager-33200.appspot.com",
-  messagingSenderId: 216475441508,
-  appId: "1:216475441508:web:ff8e659aff17526b114271",
-  measurementId: "G-LY2NX1HF4H",
+  apiKey: "AIzaSyDknVAIzb1q0AfwR8Td02cWBks_wuNFvIU",
+  authDomain: "wall-manager-56530.firebaseapp.com",
+  databaseURL: "https://wall-manager-56530-default-rtdb.firebaseio.com",
+  projectId: "wall-manager-56530",
+  storageBucket: "wall-manager-56530.appspot.com",
+  messagingSenderId: 74911556963,
+  appId: "1:74911556963:web:754a946894f6360a2d5f56",
+  measurementId: "G-WK7PSVJJZ7"
 };
 const myApp = firebase.initializeApp(firebaseConfig);
 export const auth = myApp.auth();
+
+export const db = firebase.database();
 
 const googleProvider = new firebase.auth.GoogleAuthProvider()
 export const signinGoogle = () =>{
