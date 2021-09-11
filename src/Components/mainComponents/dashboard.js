@@ -6,9 +6,11 @@ const Dashboard = () => {
   const [userdata, setUserdata] = useState({});
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      database.ref(user.uid).once("value", function (snapshot) {
-        setUserdata(snapshot.val());
-      });
+      if(user){
+        database.ref(user.uid).once("value", function (snapshot) {
+          setUserdata(snapshot.val());
+        });
+      }
     });
     // eslint-disable-next-line
   }, []);

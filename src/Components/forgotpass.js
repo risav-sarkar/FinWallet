@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useRef, useState } from "react";
 import { useAuth } from "./firebase/AuthContext";
+import { auth } from "./firebase/firebase";
 
 export const Forgotpass = () => {
   const [error, setError] = useState("");
@@ -41,7 +42,13 @@ export const Forgotpass = () => {
     } else handlePasswordReset(e);
   };
 
-  let btn3 = "Forgot Password";
+  const [btn3,setBtn3] = useState("Forgot Password");
+  const checkUser = auth.onAuthStateChanged((user) => {
+    if (user) {
+      setBtn3('Reset Password')
+    }
+  });
+  checkUser();
 
   return (
     <main>
@@ -72,7 +79,7 @@ export const Forgotpass = () => {
             Next
           </button>
           <p className="signup">
-            <Link className="linksign" to="/signin">
+            <Link className="linksign" to="/">
               Back
             </Link>
           </p>

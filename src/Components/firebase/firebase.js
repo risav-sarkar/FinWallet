@@ -18,7 +18,7 @@ export const db = firebase.database();
 
 const googleProvider = new firebase.auth.GoogleAuthProvider()
 export const signinGoogle = () =>{
-  auth.signInWithPopup(googleProvider)
+  auth.signInWithRedirect(googleProvider)
   .then((res) =>{
     console.log(res.user)
   })
