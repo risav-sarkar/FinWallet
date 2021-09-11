@@ -68,4 +68,3 @@ export const History = () => {
     </main>
   );
 };
-//database.ref(user.uid).child(Object.keys(userdata)[f - 1]) .remove();

@@ -6,7 +6,7 @@ const Dashboard = () => {
   const [userdata, setUserdata] = useState({});
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      if(user){
+      if (user) {
         database.ref(user.uid).once("value", function (snapshot) {
           setUserdata(snapshot.val());
         });

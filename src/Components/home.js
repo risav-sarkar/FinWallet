@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Dashboard from "./mainComponents/dashboard.js";
 import PaymentList from "./mainComponents/paymentList.js";
@@ -11,18 +11,16 @@ import Firebase from "firebase";
 export const Home = () => {
   const database = Firebase.database();
 
-  const [userCheck, setUserCheck] = useState(0);
   const history = useHistory();
   const [userID, setUserID] = useState("");
-  const checkUser = auth.onAuthStateChanged((user) => {
-    if (user) {
-      setUserCheck(1);
-      setUserID(user.uid);
-    }
-    else
-      history.push('/signin')
+  useEffect(() => {
+    const checkUser = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserID(user.uid);
+      } else history.push("/signin");
+    });
+    checkUser();
   });
-  checkUser();
 
   const [addBtn, setAddBtn] = useState(0);
   const [delBtn, setDelBtn] = useState(0);
@@ -41,7 +39,6 @@ export const Home = () => {
         addBtn === 1
           ? parseInt(amount.current.value)
           : parseInt(amount.current.value) * -1,
-      // id: objLen,
       month: new Date().getMonth(),
     });
 
@@ -104,27 +101,19 @@ export const Home = () => {
                   <Link to="/investment">
                     <button className="investBtn">Investment</button>
                   </Link>
-                  {userCheck === 0 ? (
-                    <Link to="/signin">
-                      <button className="investBtn">Sign In</button>
-                    </Link>
-                  ) : (
-                    <>
-                      <Link to="/account">
-                        <button className="investBtn">Accounts</button>
-                      </Link>
-                      <Link to="/signin">
-                        <button
-                          className="investBtn"
-                          onClick={() => {
-                            handleSignout();
-                          }}
-                        >
-                          Logout
-                        </button>
-                      </Link>
-                    </>
-                  )}
+                  <Link to="/account">
+                    <button className="investBtn">Accounts</button>
+                  </Link>
+                  <Link to="/signin">
+                    <button
+                      className="investBtn"
+                      onClick={() => {
+                        handleSignout();
+                      }}
+                    >
+                      Logout
+                    </button>
+                  </Link>
                 </div>
               ) : null}
             </div>
