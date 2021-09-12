@@ -2,14 +2,26 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "./firebase/AuthContext";
 import React, { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { auth } from "./firebase/firebase";
+require("es6-promise").polyfill()
+require("isomorphic-fetch")
 
 export const Signup = () => {
   let Stylesheet = {
     color: "red",
     fontSize: "13px",
   };
+
+  const history = useHistory();
+  const checkUser = auth.onAuthStateChanged((user) => {
+    if (user) {
+      history.push('/')
+    }
+  });
   
   const [loading, setLoading] = useState(false);
+  const [human,setHuman] = useState(false);
   const [error, setError] = useState("");
 
   const pass = useRef("");
@@ -19,9 +31,27 @@ export const Signup = () => {
 
   // const { signin } = useAuth();
   const { signup } = useAuth();
-  const history = useHistory();
 
   const [warnmessage, setwarnmessage] = useState("");
+
+  async function verifyHuman(value) {
+    const secret = "6LcIXl0cAAAAACcz0F6BQ-AhbGlavNN17-JWIQAD";
+    const isHuman = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+        // 'Access-Control-Allow-Origin': '*'
+      },
+      body: `secret=${secret}&response=${value}`
+    })
+    .then(res => (res.json()))
+    .then(json => (json.success))
+    .catch(err => { throw new Error(`Error in Google Siteverify API. ${err.message}`) })
+    console.log(isHuman)
+    if(isHuman)
+      setHuman(true)
+  }
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -60,17 +90,21 @@ export const Signup = () => {
       } else {
         if (pass.current.value.length < 8) {
           setwarnmessage("Password should be atleast 8 characters");
-        } else {
-          if (pass.current.value === confirmpass.current.value) {
-            console.log("password accepted");
-            handleSignup(e);
-            pass.current.value = "";
-            userid.current.value = "";
-            confirmpass.current.value = "";
-            mail.current.value = "";
-            setwarnmessage("");
+        } else{
+          if(!human){
+            setwarnmessage("Please verify that you are a human")
           } else {
-            setwarnmessage("Passwords must match");
+            if (pass.current.value === confirmpass.current.value) {
+              console.log("password accepted");
+              handleSignup(e);
+              pass.current.value = "";
+              userid.current.value = "";
+              confirmpass.current.value = "";
+              mail.current.value = "";
+              setwarnmessage("");
+            } else {
+              setwarnmessage("Passwords must match");
+            }
           }
         }
       }
@@ -128,6 +162,11 @@ export const Signup = () => {
               ref={confirmpass}
             />
           </div>
+          <ReCAPTCHA
+            sitekey="6LcIXl0cAAAAAM8ezgFHQYakb6AZF2cu0NIQS-Kh"
+            theme = "dark"
+            onChange={(value)=> verifyHuman(value)}
+          />
           <p className="warnimess" style={Stylesheet}>
             {warnmessage}
           </p>
