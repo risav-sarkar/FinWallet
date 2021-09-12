@@ -1,20 +1,18 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import NewsDisplay from "./newsDisplay";
 
 const News = () => {
   const [article, setArticle] = useState([]);
   useEffect(() => {
-    axios
-      .get(
-        "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=5c262bee863c4a30aff57ecfcf0f15b4"
-      )
-      .then((res) => {
-        setArticle(res.data["articles"]);
-      })
-      .catch((error) => console.log(error));
+    fetch(
+      "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=5c262bee863c4a30aff57ecfcf0f15b4"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setArticle(data.articles);
+      });
   }, []);
-  console.log(article);
+
   if (article) {
     return (
       <div className="newsContainer">
