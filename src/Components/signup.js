@@ -19,6 +19,7 @@ export const Signup = () => {
       history.push('/')
     }
   });
+  checkUser();
   
   const [loading, setLoading] = useState(false);
   const [human,setHuman] = useState(false);
