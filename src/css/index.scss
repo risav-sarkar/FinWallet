@@ -418,18 +418,23 @@ button {
     }
     .textContainer {
       padding: 15px;
-    }
-    .footer {
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      p {
-        margin-right: 10px;
-        border: 2px solid white;
-        padding: 5px 10px;
-        border-radius: 10px;
-        max-width: 200px;
-        overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+      .footer {
+        display: flex;
+        align-items: center;
+        p {
+          margin-right: 10px;
+          border: 2px solid white;
+          padding: 5px 10px;
+          border-radius: 10px;
+          max-width: 200px;
+          overflow: hidden;
+        }
+      }
+      h1 {
+        font-size: 25px;
       }
     }
   }

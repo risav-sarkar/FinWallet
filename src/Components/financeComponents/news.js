@@ -5,7 +5,7 @@ const News = () => {
   const [article, setArticle] = useState([]);
   useEffect(() => {
     fetch(
-      "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=5c262bee863c4a30aff57ecfcf0f15b4"
+      "https://gnews.io/api/v4/search?q=investments&country=in&lang=en&token=00f844286fd6d5a871cd6bac1a9d7c79"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -13,6 +13,7 @@ const News = () => {
       });
   }, []);
 
+  console.log(article);
   if (article) {
     return (
       <div className="newsContainer">
@@ -21,10 +22,11 @@ const News = () => {
             <NewsDisplay
               key={index}
               title={item.title}
-              image={item.urlToImage}
+              image={item.image}
               link={item.url}
-              author={item.author}
               source={item.source.name}
+              desc={item.description}
+              date={item.publishedAt}
             />
           );
         })}

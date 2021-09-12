@@ -1,13 +1,15 @@
-const NewsDisplay = ({ title, image, link, author, source }) => {
+const NewsDisplay = ({ title, image, link, desc, source, date }) => {
   return (
     <a className="news" href={link} target="_blank" rel="noreferrer">
       <img src={image} alt="logo" />
+
       <div className="textContainer">
-        <h1>{title.substring(0, title.lastIndexOf("-"))}</h1>
         <div className="footer">
           {source ? <p>{source}</p> : null}
-          {author ? <p>{author}</p> : null}
+          {date ? <p>{date.substring(0, 10)}</p> : null}
         </div>
+        <h1>{title}</h1>
+        <p>{desc}</p>
       </div>
     </a>
   );

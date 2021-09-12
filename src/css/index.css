@@ -528,10 +528,14 @@ button {
 
 .newsContainer .news .textContainer {
   padding: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 10px;
 }
 
-.newsContainer .news .footer {
-  margin-top: 10px;
+.newsContainer .news .textContainer .footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -540,11 +544,15 @@ button {
           align-items: center;
 }
 
-.newsContainer .news .footer p {
+.newsContainer .news .textContainer .footer p {
   margin-right: 10px;
   border: 2px solid white;
   padding: 5px 10px;
   border-radius: 10px;
   max-width: 200px;
   overflow: hidden;
+}
+
+.newsContainer .news .textContainer h1 {
+  font-size: 25px;
 }
