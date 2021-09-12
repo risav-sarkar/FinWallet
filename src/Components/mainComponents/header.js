@@ -5,7 +5,11 @@ const Header = () => {
   const [name, setName] = useState("Hi User");
   const checkUser = auth.onAuthStateChanged((user) => {
     if (user) {
-      setName("Hi " + user.displayName);
+      if (user.displayName.indexOf(" ") > 0) {
+        setName(
+          "Hi " + user.displayName.substring(0, user.displayName.indexOf(" "))
+        );
+      } else setName("Hi " + user.displayName);
     }
   });
   checkUser();

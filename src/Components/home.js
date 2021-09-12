@@ -98,8 +98,8 @@ export const Home = () => {
               </button>
               {menuBtn === 1 ? (
                 <div className="menuContent">
-                  <Link to="/investment">
-                    <button className="investBtn">Investment</button>
+                  <Link to="/finance">
+                    <button className="investBtn">Finance</button>
                   </Link>
                   <Link to="/account">
                     <button className="investBtn">Accounts</button>

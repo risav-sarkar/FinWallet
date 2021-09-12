@@ -395,15 +395,45 @@ button {
   margin-bottom: 10px;
 }
 
-.investComponents {
-  padding: 20px 0;
+.tabs {
+  padding: 10px 0;
 }
 
-.investComponents h1 {
-  font-size: 30px;
+.tabs .tabsContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
 }
 
-.investComponents .coinContainer {
+.tabs .tabsContainer label {
+  text-align: center;
+  border-radius: 10px;
+  font-size: 25px;
+  padding: 6px 0;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.tabs .tabsContainer label:hover {
+  background-color: #14213d;
+}
+
+.tabs .tabsContainer input[type="radio"] {
+  display: none;
+}
+
+.tabs .tabsContainer input[type="radio"]:checked {
+  display: none;
+}
+
+.tabs .tabsContainer input[type="radio"]:checked + label {
+  background-color: #14213d;
+}
+
+.coinContainer {
   margin-top: 10px;
   display: -ms-grid;
   display: grid;
@@ -412,7 +442,7 @@ button {
   grid-gap: 15px;
 }
 
-.investComponents .coinContainer .coin {
+.coinContainer .coin {
   background-color: #14213d;
   border-radius: 10px;
   display: -ms-grid;
@@ -421,7 +451,7 @@ button {
       grid-template-columns: 40% 60%;
 }
 
-.investComponents .coinContainer .coin .coinHeader {
+.coinContainer .coin .coinHeader {
   padding: 15px;
   display: -ms-grid;
   display: grid;
@@ -432,12 +462,12 @@ button {
   text-align: center;
 }
 
-.investComponents .coinContainer .coin .coinHeader img {
+.coinContainer .coin .coinHeader img {
   height: 60px;
   width: 60px;
 }
 
-.investComponents .coinContainer .coin .coinBody {
+.coinContainer .coin .coinBody {
   background-color: #eeeeee;
   border-radius: 10px;
   display: -ms-grid;
@@ -447,20 +477,20 @@ button {
   place-items: center;
 }
 
-.investComponents .coinContainer .coin .coinBody .coinPrice {
+.coinContainer .coin .coinBody .coinPrice {
   color: black;
   text-align: center;
 }
 
-.investComponents .coinContainer .coin .coinBody .coinPrice .negPrice {
+.coinContainer .coin .coinBody .coinPrice .negPrice {
   color: red;
 }
 
-.investComponents .coinContainer .coin .coinBody .coinPrice .posPrice {
+.coinContainer .coin .coinBody .coinPrice .posPrice {
   color: green;
 }
 
-.investComponents .coinContainer .coin .coinBody .coinDetails {
+.coinContainer .coin .coinBody .coinDetails {
   height: 100%;
   width: 100%;
   background-color: #f6b400;
@@ -469,4 +499,52 @@ button {
   display: -ms-grid;
   display: grid;
   place-items: center;
+}
+
+.newsContainer {
+  margin-top: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+.newsContainer a {
+  text-decoration: none;
+}
+
+.newsContainer .news {
+  background-color: #14213d;
+  color: white;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.newsContainer .news img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.newsContainer .news .textContainer {
+  padding: 15px;
+}
+
+.newsContainer .news .footer {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newsContainer .news .footer p {
+  margin-right: 10px;
+  border: 2px solid white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  max-width: 200px;
+  overflow: hidden;
 }
