@@ -13,7 +13,6 @@ const News = () => {
       });
   }, []);
 
-  console.log(article);
   if (article) {
     return (
       <div className="newsContainer">
