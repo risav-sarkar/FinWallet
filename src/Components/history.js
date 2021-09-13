@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 export const History = () => {
   const database = Firebase.database();
   const [userdata, setUserdata] = useState({});
+
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -14,8 +15,8 @@ export const History = () => {
         });
       }
     });
-    // eslint-disable-next-line
-  }, []);
+  });
+
   let f = 0;
   let data = [];
   for (let key in userdata) {
@@ -60,6 +61,7 @@ export const History = () => {
                             .remove();
                         }
                       });
+                      setUserdata(userdata);
                     }}
                   >
                     Delete
