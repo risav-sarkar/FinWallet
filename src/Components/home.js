@@ -1,4 +1,12 @@
 import { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCaretUp,
+  faCaretDown,
+  faMoneyBillWave,
+  faUserCircle,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Dashboard from "./mainComponents/dashboard.js";
 import PaymentList from "./mainComponents/paymentList.js";
@@ -99,10 +107,16 @@ export const Home = () => {
               {menuBtn === 1 ? (
                 <div className="menuContent">
                   <Link to="/finance">
-                    <button className="investBtn">Finance</button>
+                    <button className="investBtn">
+                      <FontAwesomeIcon icon={faMoneyBillWave} />
+                      {` Finance`}
+                    </button>
                   </Link>
                   <Link to="/account">
-                    <button className="investBtn">Accounts</button>
+                    <button className="investBtn">
+                      <FontAwesomeIcon icon={faUserCircle} />
+                      {` Accounts`}
+                    </button>
                   </Link>
                   <Link to="/signin">
                     <button
@@ -111,7 +125,8 @@ export const Home = () => {
                         handleSignout();
                       }}
                     >
-                      Logout
+                      <FontAwesomeIcon icon={faSignOutAlt} />
+                      {` Logout`}
                     </button>
                   </Link>
                 </div>
@@ -127,7 +142,8 @@ export const Home = () => {
                   setAddBtn(1);
                 }}
               >
-                Add Income
+                <FontAwesomeIcon icon={faCaretUp} />
+                {`  Add Income`}
               </button>
               <button
                 className="delBtn"
@@ -135,7 +151,8 @@ export const Home = () => {
                   setDelBtn(1);
                 }}
               >
-                Add Expense
+                <FontAwesomeIcon icon={faCaretDown} />
+                {`  Add Expense`}
               </button>
             </div>
           </>

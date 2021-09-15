@@ -118,7 +118,7 @@ button {
 .styled-input {
   margin-bottom: 10px;
   border-radius: 20px;
-  background-color: #1a183b;
+  background-color: $color3;
   padding: 10px 20px 10px 20px;
   font-size: 1.5em;
 
@@ -212,9 +212,9 @@ button {
     grid-template-columns: 40% 35% 25%;
     place-items: center;
     button {
+      font-size: 20px;
       background-color: transparent;
-      border: 2px solid white;
-      padding: 5px 8px;
+      padding: 5px 15px;
       justify-self: end;
     }
     h1 {

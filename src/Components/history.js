@@ -1,7 +1,9 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Firebase from "firebase";
 import { auth } from "./firebase/firebase";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { faBackward, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 export const History = () => {
   const database = Firebase.database();
@@ -33,7 +35,10 @@ export const History = () => {
           <div className="listHeader">
             <h3>All History</h3>
             <Link to="/">
-              <button>Back</button>
+              <button>
+                <FontAwesomeIcon icon={faBackward} />
+                {` Back`}
+              </button>
             </Link>
           </div>
           {data
@@ -64,7 +69,7 @@ export const History = () => {
                       setUserdata(userdata);
                     }}
                   >
-                    Delete
+                    <FontAwesomeIcon icon={faTrashAlt} />
                   </button>
                 </div>
               );

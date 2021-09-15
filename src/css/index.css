@@ -131,7 +131,7 @@ button {
 .styled-input {
   margin-bottom: 10px;
   border-radius: 20px;
-  background-color: #1a183b;
+  background-color: #14213d;
   padding: 10px 20px 10px 20px;
   font-size: 1.5em;
 }
@@ -265,9 +265,9 @@ button {
 }
 
 .historyContainer .listItems button {
+  font-size: 20px;
   background-color: transparent;
-  border: 2px solid white;
-  padding: 5px 8px;
+  padding: 5px 15px;
   -ms-grid-column-align: end;
       justify-self: end;
 }
