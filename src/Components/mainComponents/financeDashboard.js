@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Crypto from "../financeComponents/crypto";
+import Stocks from "../financeComponents/stocks";
 import News from "../financeComponents/news";
 
 const FinanceDashboard = () => {
@@ -47,7 +48,7 @@ const FinanceDashboard = () => {
       {cryptoBtn === 1 && stocksBtn === 0 && newsBtn === 0 ? (
         <Crypto />
       ) : cryptoBtn === 0 && stocksBtn === 1 && newsBtn === 0 ? (
-        <h1>stocks</h1>
+        <Stocks />
       ) : (
         <News />
       )}

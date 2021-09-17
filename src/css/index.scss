@@ -389,11 +389,60 @@ button {
       .coinDetails {
         height: 100%;
         width: 100%;
-        background-color: #f6b400;
+        background-color: #e7ab04;
         border-radius: 10px;
         padding: 10px;
         display: grid;
         place-items: center;
+      }
+    }
+  }
+}
+
+.stocksContainer {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+  .stock {
+    background-color: #eeeeee;
+    border-radius: 12px;
+    .stockHeader {
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #14213d;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      h1 {
+        font-size: 22px;
+      }
+      p {
+        color: rgb(22, 206, 22);
+      }
+    }
+    .details {
+      display: grid;
+      grid-template-columns: 60% 1fr;
+      p {
+        font-size: 17px;
+        font-weight: 600;
+      }
+      .close {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        padding: 15px;
+        background-color: #e7ab04;
+        border-radius: 10px;
+        border-top-left-radius: 0px;
+      }
+      .volume {
+        padding: 15px;
+        display: grid;
+        place-items: center;
+        color: black;
       }
     }
   }

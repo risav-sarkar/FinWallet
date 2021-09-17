@@ -493,12 +493,82 @@ button {
 .coinContainer .coin .coinBody .coinDetails {
   height: 100%;
   width: 100%;
-  background-color: #f6b400;
+  background-color: #e7ab04;
   border-radius: 10px;
   padding: 10px;
   display: -ms-grid;
   display: grid;
   place-items: center;
+}
+
+.stocksContainer {
+  margin-top: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+.stocksContainer .stock {
+  background-color: #eeeeee;
+  border-radius: 12px;
+}
+
+.stocksContainer .stock .stockHeader {
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #14213d;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.stocksContainer .stock .stockHeader h1 {
+  font-size: 22px;
+}
+
+.stocksContainer .stock .stockHeader p {
+  color: #16ce16;
+}
+
+.stocksContainer .stock .details {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60% 1fr;
+      grid-template-columns: 60% 1fr;
+}
+
+.stocksContainer .stock .details p {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.stocksContainer .stock .details .close {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  place-items: center;
+  padding: 15px;
+  background-color: #e7ab04;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+}
+
+.stocksContainer .stock .details .volume {
+  padding: 15px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  color: black;
 }
 
 .newsContainer {
