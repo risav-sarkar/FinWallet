@@ -6,6 +6,8 @@ const Stocks = () => {
   const database = Firebase.database();
   const [bse, setBse] = useState({});
   const [nse, setNse] = useState({});
+  const [bsebtn, setBsebtn] = useState(1);
+  const [nsebtn, setNsebtn] = useState(0);
   let bseArr = [];
   let nseArr = [];
 
@@ -40,44 +42,68 @@ const Stocks = () => {
       });
     }
 
-    console.log(bseArr);
-    console.log(nseArr);
-
     return (
-      <>
-        <div className="stocksContainer">
-          <h1>Top 10 BSE Gainers</h1>
-          {bseArr.map((stock) => {
-            return (
-              <StockDisplay
-                key={stock.id}
-                name={stock.name}
-                rupeeChange={stock.rupeeChange}
-                percentChange={stock.percentChange}
-                prevClose={stock.prevClose}
-                close={stock.close}
-                volume={stock.volume}
-              />
-            );
-          })}
+      <div className="stocksMain">
+        <div className="tabs">
+          <div className="tabsContainer">
+            <input type="radio" id="btn1" name="tab" />
+            <label
+              htmlFor="btn1"
+              onClick={() => {
+                setBsebtn(1);
+                setNsebtn(0);
+              }}
+            >
+              BSE
+            </label>
+            <input type="radio" id="btn2" name="tab" />
+            <label
+              htmlFor="btn2"
+              onClick={() => {
+                setBsebtn(0);
+                setNsebtn(1);
+              }}
+            >
+              NSE
+            </label>
+          </div>
         </div>
-        <div className="stocksContainer">
-          <h1>Top 10 NSE Gainers</h1>
-          {nseArr.map((stock) => {
-            return (
-              <StockDisplay
-                key={stock.id}
-                name={stock.name}
-                rupeeChange={stock.rupeeChange}
-                percentChange={stock.percentChange}
-                prevClose={stock.prevClose}
-                close={stock.close}
-                volume={stock.volume}
-              />
-            );
-          })}
-        </div>
-      </>
+        {bsebtn === 1 && nsebtn === 0 ? (
+          <div className="stocksContainer">
+            <h1>Top 10 BSE Gainers</h1>
+            {bseArr.map((stock) => {
+              return (
+                <StockDisplay
+                  key={stock.id}
+                  name={stock.name}
+                  rupeeChange={stock.rupeeChange}
+                  percentChange={stock.percentChange}
+                  prevClose={stock.prevClose}
+                  close={stock.close}
+                  volume={stock.volume}
+                />
+              );
+            })}
+          </div>
+        ) : (
+          <div className="stocksContainer">
+            <h1>Top 10 NSE Gainers</h1>
+            {nseArr.map((stock) => {
+              return (
+                <StockDisplay
+                  key={stock.id}
+                  name={stock.name}
+                  rupeeChange={stock.rupeeChange}
+                  percentChange={stock.percentChange}
+                  prevClose={stock.prevClose}
+                  close={stock.close}
+                  volume={stock.volume}
+                />
+              );
+            })}
+          </div>
+        )}
+      </div>
     );
   } else return <h1>h1</h1>;
 };

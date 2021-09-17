@@ -395,11 +395,11 @@ button {
   margin-bottom: 10px;
 }
 
-.tabs {
+.financeDashboard .tabs {
   padding: 10px 0;
 }
 
-.tabs .tabsContainer {
+.financeDashboard .tabs .tabsContainer {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
@@ -407,7 +407,7 @@ button {
   grid-gap: 10px;
 }
 
-.tabs .tabsContainer label {
+.financeDashboard .tabs .tabsContainer label {
   text-align: center;
   border-radius: 10px;
   font-size: 25px;
@@ -417,20 +417,16 @@ button {
   transition: 0.3s;
 }
 
-.tabs .tabsContainer label:hover {
+.financeDashboard .tabs .tabsContainer label:hover {
   background-color: #14213d;
 }
 
-.tabs .tabsContainer input[type="radio"] {
+.financeDashboard .tabs .tabsContainer input[type="radio"] {
   display: none;
 }
 
-.tabs .tabsContainer input[type="radio"]:checked {
+.financeDashboard .tabs .tabsContainer input[type="radio"]:checked {
   display: none;
-}
-
-.tabs .tabsContainer input[type="radio"]:checked + label {
-  background-color: #14213d;
 }
 
 .coinContainer {
@@ -501,8 +497,43 @@ button {
   place-items: center;
 }
 
-.stocksContainer {
-  margin-top: 30px;
+.stocksMain .tabs {
+  padding: 10px 0;
+}
+
+.stocksMain .tabs .tabsContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.stocksMain .tabs .tabsContainer label {
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid white;
+  font-size: 25px;
+  padding: 6px 0;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.stocksMain .tabs .tabsContainer label:hover {
+  background-color: #14213d;
+}
+
+.stocksMain .tabs .tabsContainer input[type="radio"] {
+  display: none;
+}
+
+.stocksMain .tabs .tabsContainer input[type="radio"]:checked {
+  display: none;
+}
+
+.stocksMain .stocksContainer {
+  margin-top: 10px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -510,12 +541,16 @@ button {
   grid-gap: 15px;
 }
 
-.stocksContainer .stock {
+.stocksMain .stocksContainer h1 {
+  text-align: center;
+}
+
+.stocksMain .stocksContainer .stock {
   background-color: #eeeeee;
   border-radius: 12px;
 }
 
-.stocksContainer .stock .stockHeader {
+.stocksMain .stocksContainer .stock .stockHeader {
   padding: 10px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -531,27 +566,27 @@ button {
   border-top-left-radius: 10px;
 }
 
-.stocksContainer .stock .stockHeader h1 {
+.stocksMain .stocksContainer .stock .stockHeader h1 {
   font-size: 22px;
 }
 
-.stocksContainer .stock .stockHeader p {
+.stocksMain .stocksContainer .stock .stockHeader p {
   color: #16ce16;
 }
 
-.stocksContainer .stock .details {
+.stocksMain .stocksContainer .stock .details {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 60% 1fr;
       grid-template-columns: 60% 1fr;
 }
 
-.stocksContainer .stock .details p {
+.stocksMain .stocksContainer .stock .details p {
   font-size: 17px;
   font-weight: 600;
 }
 
-.stocksContainer .stock .details .close {
+.stocksMain .stocksContainer .stock .details .close {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -563,7 +598,7 @@ button {
   border-top-left-radius: 0px;
 }
 
-.stocksContainer .stock .details .volume {
+.stocksMain .stocksContainer .stock .details .volume {
   padding: 15px;
   display: -ms-grid;
   display: grid;
