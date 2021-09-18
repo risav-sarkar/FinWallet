@@ -3,14 +3,12 @@ import { useHistory } from "react-router-dom";
 import { useAuth } from "./firebase/AuthContext";
 import google from "../image/google.png";
 import React, { useRef, useState } from "react";
-import { signinGoogle,auth } from "./firebase/firebase";
-
+import { signinGoogle, auth } from "./firebase/firebase";
 
 export const Signin = () => {
-
   const checkUser = auth.onAuthStateChanged((user) => {
     if (user) {
-      history.push('/')
+      history.push("/");
     }
   });
   checkUser();
@@ -91,7 +89,11 @@ export const Signin = () => {
             <Link to="/forgot">Forgot password?</Link>
           </div>
           <div className="googlecont">
-            <button className="googlebtn" disabled={loading} onClick={signinGoogle}>
+            <button
+              className="googlebtn"
+              disabled={loading}
+              onClick={signinGoogle}
+            >
               {" "}
               <img
                 src={google}

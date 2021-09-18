@@ -46,6 +46,8 @@ button {
   font-size: 15px;
   cursor: pointer;
   color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .headerText {
@@ -94,6 +96,11 @@ button {
   border: 2px solid black;
 }
 
+.menuContainer .menuContent .investBtn:hover {
+  background-color: black;
+  color: white;
+}
+
 .mainContainer {
   position: relative;
   max-width: 400px;
@@ -112,20 +119,39 @@ button {
 }
 
 .btnContainer .addBtn {
+  border: 2px solid #478f73;
+  background-color: transparent;
+}
+
+.btnContainer .addBtn:hover {
   background-color: #478f73;
 }
 
 .btnContainer .delBtn {
+  background-color: transparent;
+  border: 2px solid #c9184a;
+}
+
+.btnContainer .delBtn:hover {
   background-color: #c9184a;
 }
 
 .btnContainer .submitBtn {
-  background-color: #c9184a;
+  background-color: transparent;
+  border: 2px solid #0c61e0;
+}
+
+.btnContainer .submitBtn:hover {
+  background-color: #0c61e0;
 }
 
 .btnContainer .cancelBtn {
   background-color: transparent;
   border: 2px solid #c9184a;
+}
+
+.btnContainer .cancelBtn:hover {
+  background-color: #c9184a;
 }
 
 .styled-input {
@@ -173,6 +199,11 @@ button {
   background-color: transparent;
   border: 2px solid white;
   padding: 5px 8px;
+}
+
+.listContainer .listHeader button:hover {
+  background-color: white;
+  color: black;
 }
 
 .listContainer .listItems {
@@ -254,6 +285,11 @@ button {
   padding: 5px 8px;
 }
 
+.historyContainer .listHeader button:hover {
+  background-color: white;
+  color: black;
+}
+
 .historyContainer .listItems {
   padding: 10px 20px;
   border-radius: 10px;
@@ -270,6 +306,11 @@ button {
   padding: 5px 15px;
   -ms-grid-column-align: end;
       justify-self: end;
+}
+
+.historyContainer .listItems button:hover {
+  background-color: white;
+  color: black;
 }
 
 .historyContainer .listItems h1 {
@@ -317,12 +358,17 @@ button {
 
 .signinContainer .signinBtn {
   margin-top: 10px;
-  background-color: #0095f6;
   border-radius: 10px;
   cursor: pointer;
   border: none;
-  padding: 10px 50px;
+  padding: 7px 50px;
   font-size: 14px;
+  background-color: transparent;
+  border: 2px solid #0c61e0;
+}
+
+.signinContainer .signinBtn:hover {
+  background-color: #0c61e0;
 }
 
 .signinContainer .signup {
