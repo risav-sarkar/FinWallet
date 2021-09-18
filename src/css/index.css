@@ -729,38 +729,47 @@ button {
   font-size: 25px;
 }
 
-/* FrontlogoCss */
-body{
-  background-color: #03071e;
-
+.finwall {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.logofin{
 
+.finwall .logofin {
   border-radius: 10px;
   padding: 20px 40px;
 }
-.finwall{
-  height: 100vh;
+
+.finwall .logofin .fincont {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.fincont{
-  display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.finimg{
+.finwall .logofin .finimg {
   width: 200px;
   height: 200px;
   border-radius: 58%;
-  background: url('/src/logo.png') no-repeat;
+  background: url("/src/logo.png") no-repeat;
   background-size: contain;
-  animation: finwal 4s 1 normal;  
-  box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.979);
-  border:2px solid white;
+  -webkit-animation: finwal 4s 1 normal;
+          animation: finwal 4s 1 normal;
+  -webkit-box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.979);
+          box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.979);
+  border: 2px solid white;
 }
-.fintxt{
+
+.finwall .logofin .fintxt {
   color: white;
   border-radius: 5px;
   padding: 5px 10px;
@@ -768,22 +777,33 @@ body{
   font-weight: 900;
   text-align: center;
   margin-top: 20px;
-  text-shadow:rgb(230, 9, 101) 2px 5px 10px; 
+  text-shadow: #e60965 2px 5px 10px;
 }
 
-
-
-
+@-webkit-keyframes finwal {
+  0% {
+    width: 125px;
+    height: 125px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    width: 200px;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 
 @keyframes finwal {
-  0%{
-    width:125px;
+  0% {
+    width: 125px;
     height: 125px;
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
-  100%{
+  100% {
     width: 200px;
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
-

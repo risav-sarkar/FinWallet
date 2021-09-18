@@ -47,10 +47,12 @@ button {
   color: white;
   transition: 0.3s;
 }
+
 .headerText {
   font-size: 40px;
   margin-bottom: 10px;
 }
+
 .menuContainer {
   .menu {
     background-color: transparent;
@@ -574,6 +576,52 @@ button {
       }
       h1 {
         font-size: 25px;
+      }
+    }
+  }
+}
+
+.finwall {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .logofin {
+    border-radius: 10px;
+    padding: 20px 40px;
+    .fincont {
+      display: flex;
+      justify-content: center;
+    }
+    .finimg {
+      width: 200px;
+      height: 200px;
+      border-radius: 58%;
+      background: url("/src/logo.png") no-repeat;
+      background-size: contain;
+      animation: finwal 4s 1 normal;
+      box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.979);
+      border: 2px solid white;
+    }
+    .fintxt {
+      color: white;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 60px;
+      font-weight: 900;
+      text-align: center;
+      margin-top: 20px;
+      text-shadow: rgb(230, 9, 101) 2px 5px 10px;
+    }
+    @keyframes finwal {
+      0% {
+        width: 125px;
+        height: 125px;
+        transform: rotate(0deg);
+      }
+      100% {
+        width: 200px;
+        transform: rotate(360deg);
       }
     }
   }
