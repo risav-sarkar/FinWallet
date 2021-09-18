@@ -25,7 +25,7 @@ export const Home = () => {
     const checkUser = auth.onAuthStateChanged((user) => {
       if (user) {
         setUserID(user.uid);
-      } else history.push("/signin");
+      } else history.push("/Frontlogo");
     });
     checkUser();
   });

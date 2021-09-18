@@ -8,7 +8,7 @@ import { History } from "./Components/history";
 import { Finance } from "./Components/finance";
 import { Account } from "./Components/account";
 import { AuthProvider } from "./Components/firebase/AuthContext";
-
+import { Frontlogo } from "./Components/frontlogo";
 function App() {
   return (
     <>
@@ -18,6 +18,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/signup" component={Signup} />
             <Route path="/forgot" component={Forgotpass} />
+            <Route path="/frontlogo" component={Frontlogo}/>
             <Route path="/signin" component={Signin} />
             <Route path="/history" component={History} />
             <Route path="/finance" component={Finance} />
