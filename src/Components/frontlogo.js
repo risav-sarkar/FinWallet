@@ -1,12 +1,10 @@
 import React from 'react';
-import { Signin } from './signin';
 import { useHistory } from "react-router-dom";
-import { useState,useEffect } from 'react'
+
 
 
 
 export function Frontlogo() {
-    const [fronta, setfronta] = useState(0)
     const history=useHistory()
     
 
