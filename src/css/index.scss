@@ -156,6 +156,27 @@ button {
   }
 }
 
+.headerAccounts {
+  h1 {
+    font-size: 40px;
+  }
+  .editBtn {
+    font-size: 25px;
+    margin-left: 20px;
+    background-color: transparent;
+    border: none;
+  }
+  .accountInput {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 40px;
+    max-width: 220px;
+  }
+}
+
 .listContainer {
   padding: 10px 0px;
   display: grid;
