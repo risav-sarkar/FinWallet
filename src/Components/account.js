@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTimes, faCheck } from "@fortawesome/free-solid-svg-icons";
+import firebase from "firebase";
 
 export const Account = () => {
   const database = Firebase.database();
@@ -31,8 +32,13 @@ export const Account = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //Sarbottam
-    console.log(editName.current.value);
+    const user = firebase.auth().currentUser
+    user.updateProfile({
+      displayName : editName.current.value
+    })
+    .then(()=>{
+      setName(user.displayName)
+    })
     setEditBtn(0);
   };
 
