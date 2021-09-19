@@ -3,7 +3,7 @@ import Firebase from "firebase";
 import { auth } from "./firebase/firebase";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { faBackward, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 export const History = () => {
   const database = Firebase.database();
@@ -33,12 +33,9 @@ export const History = () => {
       <div className="mainContainer">
         <div className="historyContainer">
           <div className="listHeader">
-            <h3>All History</h3>
+            <h1>History</h1>
             <Link to="/">
-              <button>
-                <FontAwesomeIcon icon={faBackward} />
-                {` Back`}
-              </button>
+              <button>Back</button>
             </Link>
           </div>
           {data

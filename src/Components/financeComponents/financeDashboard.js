@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Crypto from "../financeComponents/crypto";
-import Stocks from "../financeComponents/stocks";
-import News from "../financeComponents/news";
+import Crypto from "./crypto";
+import Stocks from "./stocks";
+import News from "./news";
 
 const FinanceDashboard = () => {
   const [cryptoBtn, setCryptoBtn] = useState(1);
