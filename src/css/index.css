@@ -722,8 +722,8 @@ button {
 .stocksMain .stocksContainer .stock .details {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 55% 1fr;
-      grid-template-columns: 55% 1fr;
+  -ms-grid-columns: 60% 1fr;
+      grid-template-columns: 60% 1fr;
 }
 
 .stocksMain .stocksContainer .stock .details p {
