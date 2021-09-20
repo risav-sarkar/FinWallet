@@ -14,8 +14,7 @@ const PaymentList = () => {
         });
       }
     });
-    // eslint-disable-next-line
-  }, []);
+  }, [database]);
 
   let data = [];
   for (let key in userdata) {

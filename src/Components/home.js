@@ -109,13 +109,13 @@ export const Home = () => {
                   <Link to="/finance">
                     <button className="investBtn">
                       <FontAwesomeIcon icon={faMoneyBillWave} />
-                      {` Finance`}
+                      Finance
                     </button>
                   </Link>
                   <Link to="/account">
                     <button className="investBtn">
                       <FontAwesomeIcon icon={faUserCircle} />
-                      {` Accounts`}
+                      Accounts
                     </button>
                   </Link>
                   <Link to="/signin">
@@ -126,7 +126,7 @@ export const Home = () => {
                       }}
                     >
                       <FontAwesomeIcon icon={faSignOutAlt} />
-                      {` Logout`}
+                      Logout
                     </button>
                   </Link>
                 </div>

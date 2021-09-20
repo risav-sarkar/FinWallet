@@ -37,12 +37,17 @@ main {
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 button {
   height: 35px;
   border-radius: 10px;
   border: none;
   font-weight: 600;
   letter-spacing: 1.2px;
+  text-decoration: none;
   font-size: 15px;
   cursor: pointer;
   color: white;
@@ -91,9 +96,18 @@ button {
 }
 
 .menuContainer .menuContent .investBtn {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 5px;
   color: black;
   background-color: transparent;
   border: 2px solid black;
+}
+
+.menuContainer .menuContent .investBtn p {
+  text-decoration: none;
 }
 
 .menuContainer .menuContent .investBtn:hover {
