@@ -1,7 +1,7 @@
 import { auth } from "./firebase/firebase";
 import Firebase from "firebase";
 import { useState, useRef } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTimes, faCheck } from "@fortawesome/free-solid-svg-icons";
 import firebase from "firebase";
@@ -32,13 +32,14 @@ export const Account = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const user = firebase.auth().currentUser
-    user.updateProfile({
-      displayName : editName.current.value
-    })
-    .then(()=>{
-      setName(user.displayName)
-    })
+    const user = firebase.auth().currentUser;
+    user
+      .updateProfile({
+        displayName: editName.current.value,
+      })
+      .then(() => {
+        setName(user.displayName);
+      });
     setEditBtn(0);
   };
 
@@ -85,6 +86,9 @@ export const Account = () => {
         </div>
         <div className="accountContainer">
           <div className="btnContainer">
+            <Link to="/">
+              <button className="backBtn">Back</button>
+            </Link>
             <button
               onClick={() => {
                 history.push("/forgot");

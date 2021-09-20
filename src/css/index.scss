@@ -383,11 +383,25 @@ button {
     grid-template-columns: 1fr;
     max-width: 200px;
   }
+  .backBtn {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border: 2px solid white;
+    padding: 6px 10px;
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
   button {
     background-color: white;
     color: black;
     padding: 10px;
     margin-bottom: 10px;
+    &:hover {
+      background-color: rgb(206, 206, 206);
+    }
   }
 }
 

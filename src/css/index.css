@@ -474,11 +474,28 @@ button {
   max-width: 200px;
 }
 
+.accountContainer .backBtn {
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border: 2px solid white;
+  padding: 6px 10px;
+}
+
+.accountContainer .backBtn:hover {
+  background-color: white;
+  color: black;
+}
+
 .accountContainer button {
   background-color: white;
   color: black;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+.accountContainer button:hover {
+  background-color: #cecece;
 }
 
 .finance .header {
