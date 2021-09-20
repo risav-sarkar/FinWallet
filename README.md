@@ -35,7 +35,11 @@ Run the app
 npm start
 ```
 
-## Authors
+## 🔨 Challenges we ran into
+
+lorem
+
+## 🧍 Creators
 
 **Risav Sarkar**
 

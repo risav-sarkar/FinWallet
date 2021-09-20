@@ -48,19 +48,25 @@ export const Account = () => {
       <div className="mainContainer">
         <div className="headerAccounts">
           {editBtn === 0 ? (
-            <h1>
-              {`Hi ${name}`}
-              <button
-                className="editBtn"
-                onClick={() => {
-                  setEditBtn(1);
-                }}
-              >
-                <FontAwesomeIcon icon={faPen} />
+            <>
+              <h1>
+                {`Hi ${name}`}
+                <button
+                  className="editBtn"
+                  onClick={() => {
+                    setEditBtn(1);
+                  }}
+                >
+                  <FontAwesomeIcon icon={faPen} />
+                </button>
+              </h1>
+              <button className="backBtn">
+                {" "}
+                <Link to="/">Back</Link>
               </button>
-            </h1>
+            </>
           ) : (
-            <h1>
+            <>
               <form onSubmit={handleSubmit}>
                 <input
                   className="accountInput"
@@ -81,14 +87,14 @@ export const Account = () => {
                   <FontAwesomeIcon icon={faTimes} />
                 </button>
               </form>
-            </h1>
+              <button className="backBtn">
+                <Link to="/">Back</Link>
+              </button>
+            </>
           )}
         </div>
         <div className="accountContainer">
           <div className="btnContainer">
-            <Link to="/">
-              <button className="backBtn">Back</button>
-            </Link>
             <button
               onClick={() => {
                 history.push("/forgot");

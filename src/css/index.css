@@ -39,6 +39,8 @@ main {
 
 a {
   text-decoration: none;
+  padding: none;
+  margin: none;
 }
 
 button {
@@ -188,8 +190,43 @@ button {
   font-size: 1.2em;
 }
 
+.headerAccounts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .headerAccounts h1 {
   font-size: 40px;
+}
+
+.headerAccounts .backBtn {
+  margin-left: auto;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border: 2px solid white;
+  padding: 6px 10px;
+}
+
+.headerAccounts .backBtn a {
+  color: white;
+}
+
+.headerAccounts .backBtn:hover {
+  background-color: white;
+  color: black;
+}
+
+.headerAccounts .backBtn:hover a {
+  color: black;
 }
 
 .headerAccounts .editBtn {
@@ -206,7 +243,7 @@ button {
   border-bottom: 2px solid white;
   color: white;
   font-size: 40px;
-  max-width: 220px;
+  max-width: 200px;
 }
 
 .listContainer {
@@ -472,19 +509,6 @@ button {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   max-width: 200px;
-}
-
-.accountContainer .backBtn {
-  background-color: transparent;
-  color: white;
-  cursor: pointer;
-  border: 2px solid white;
-  padding: 6px 10px;
-}
-
-.accountContainer .backBtn:hover {
-  background-color: white;
-  color: black;
 }
 
 .accountContainer button {

@@ -37,6 +37,8 @@ main {
 }
 a {
   text-decoration: none;
+  padding: none;
+  margin: none;
 }
 button {
   height: 35px;
@@ -167,8 +169,29 @@ button {
 }
 
 .headerAccounts {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   h1 {
     font-size: 40px;
+  }
+  .backBtn {
+    margin-left: auto;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border: 2px solid white;
+    padding: 6px 10px;
+    a {
+      color: white;
+    }
+    &:hover {
+      a {
+        color: black;
+      }
+      background-color: white;
+      color: black;
+    }
   }
   .editBtn {
     font-size: 25px;
@@ -183,7 +206,7 @@ button {
     border-bottom: 2px solid white;
     color: white;
     font-size: 40px;
-    max-width: 220px;
+    max-width: 200px;
   }
 }
 
@@ -382,17 +405,6 @@ button {
     display: grid;
     grid-template-columns: 1fr;
     max-width: 200px;
-  }
-  .backBtn {
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-    border: 2px solid white;
-    padding: 6px 10px;
-    &:hover {
-      background-color: white;
-      color: black;
-    }
   }
   button {
     background-color: white;
