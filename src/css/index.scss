@@ -573,22 +573,22 @@ button {
       }
       .details {
         display: grid;
-        grid-template-columns: 60% 1fr;
+        grid-template-columns: 55% 1fr;
         p {
-          font-size: 17px;
+          font-size: 18px;
           font-weight: 600;
         }
         .close {
           display: grid;
           grid-template-columns: 1fr 1fr;
           place-items: center;
-          padding: 15px;
+          padding: 10px;
           background-color: #e7ab04;
           border-radius: 10px;
           border-top-left-radius: 0px;
         }
         .volume {
-          padding: 15px;
+          padding: 10px;
           display: grid;
           place-items: center;
           color: black;

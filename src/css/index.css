@@ -722,12 +722,12 @@ button {
 .stocksMain .stocksContainer .stock .details {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 60% 1fr;
-      grid-template-columns: 60% 1fr;
+  -ms-grid-columns: 55% 1fr;
+      grid-template-columns: 55% 1fr;
 }
 
 .stocksMain .stocksContainer .stock .details p {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -737,14 +737,14 @@ button {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   place-items: center;
-  padding: 15px;
+  padding: 10px;
   background-color: #e7ab04;
   border-radius: 10px;
   border-top-left-radius: 0px;
 }
 
 .stocksMain .stocksContainer .stock .details .volume {
-  padding: 15px;
+  padding: 10px;
   display: -ms-grid;
   display: grid;
   place-items: center;

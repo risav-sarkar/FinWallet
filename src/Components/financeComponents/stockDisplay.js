@@ -27,7 +27,7 @@ const StockDisplay = ({
       <div className="details">
         <div className="close">
           <div>
-            <p>Close</p>
+            <p>LTP</p>
             <p>₹{close}</p>
           </div>
           <div>
