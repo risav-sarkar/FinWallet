@@ -793,6 +793,88 @@ button {
   font-size: 25px;
 }
 
+.learn .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.learn .header h1 {
+  font-size: 40px;
+}
+
+.learn .header button {
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid white;
+  padding: 6px 10px;
+}
+
+.learn .header button:hover {
+  background-color: white;
+  color: black;
+}
+
+.learn .learnComponents {
+  margin-top: 10px;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 15px;
+  padding-bottom: 10px;
+}
+
+.learn .learnComponents .components {
+  background-color: #eeeeee;
+  border-radius: 11px;
+}
+
+.learn .learnComponents .components .headerComp {
+  color: black;
+  padding: 10px 15px;
+}
+
+.learn .learnComponents .components .headerComp h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.learn .learnComponents .components .prosCons {
+  background-color: #14213d;
+  border-radius: 10px;
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.learn .learnComponents .components .prosCons h3 {
+  margin-bottom: 5px;
+}
+
+.learn .learnComponents .components .prosCons .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+}
+
+.learn .learnComponents .components .prosCons .grid .pros {
+  color: #478f73;
+}
+
+.learn .learnComponents .components .prosCons .grid .cons {
+  color: #c9184a;
+}
+
 .finwall {
   height: 100vh;
   display: -webkit-box;
