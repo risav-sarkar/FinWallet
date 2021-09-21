@@ -1,29 +1,8 @@
-import Firebase from "firebase";
-import { auth } from "../firebase/firebase";
-import { useEffect, useState } from "react";
-const Dashboard = () => {
-  const database = Firebase.database();
-  const [userdata, setUserdata] = useState({});
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        database.ref(user.uid).once("value", function (snapshot) {
-          setUserdata(snapshot.val());
-        });
-      }
-    });
-    // eslint-disable-next-line
-  }, []);
-
-  let data = [];
-  for (let key in userdata) {
-    let obj = userdata[key];
-    data.push(obj);
-  }
-
+const Dashboard = ({ data }) => {
   let balance = 0;
   let incomeMonthly = 0;
   let expenseMonthly = 0;
+
   for (let i = 0; i < data.length; i++) {
     balance += data[i].amount;
     if (data[i].month === new Date().getMonth() && data[i].amount > 0) {

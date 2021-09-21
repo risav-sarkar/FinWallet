@@ -18,17 +18,28 @@ import Firebase from "firebase";
 
 export const Home = () => {
   const database = Firebase.database();
-
   const history = useHistory();
+
   const [userID, setUserID] = useState("");
+  const [userdata, setUserdata] = useState([]);
+
   useEffect(() => {
     const checkUser = auth.onAuthStateChanged((user) => {
       if (user) {
         setUserID(user.uid);
+        database.ref(user.uid).once("value", async function (snapshot) {
+          setUserdata(snapshot.val());
+        });
       } else history.push("/Frontlogo");
     });
     checkUser();
   });
+
+  let data = [];
+  for (let key in userdata) {
+    let obj = userdata[key];
+    data.push(obj);
+  }
 
   const [addBtn, setAddBtn] = useState(0);
   const [delBtn, setDelBtn] = useState(0);
@@ -133,8 +144,8 @@ export const Home = () => {
               ) : null}
             </div>
             <Header />
-            <Dashboard />
-            <PaymentList />
+            <Dashboard data={data} />
+            <PaymentList data={data} />
             <div className="btnContainer">
               <button
                 className="addBtn"

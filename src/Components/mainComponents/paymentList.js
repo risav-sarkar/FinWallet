@@ -1,27 +1,6 @@
 import { Link } from "react-router-dom";
-import Firebase from "firebase";
-import { auth } from "../firebase/firebase";
-import { useEffect, useState } from "react";
 
-const PaymentList = () => {
-  const database = Firebase.database();
-  const [userdata, setUserdata] = useState({});
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        database.ref(user.uid).once("value", function (snapshot) {
-          setUserdata(snapshot.val());
-        });
-      }
-    });
-  }, [database]);
-
-  let data = [];
-  for (let key in userdata) {
-    let obj = userdata[key];
-    data.push(obj);
-  }
-
+const PaymentList = ({ data }) => {
   let arrTemp = [];
   let f = data.length - 1;
   while (f >= 0 && data.length - f <= 5) {
@@ -41,7 +20,7 @@ const PaymentList = () => {
         const { name, amount } = items;
         return (
           <div
-            key={Object.keys(userdata)[f++]}
+            key={f++}
             className={
               "listItems " + (amount < 0 ? "expenseItems" : "incomeItems")
             }

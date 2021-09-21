@@ -1,5 +1,5 @@
 import { auth } from "../firebase/firebase";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const [name, setName] = useState("Hi User");
