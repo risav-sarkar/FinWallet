@@ -42,10 +42,10 @@ export const Forgotpass = () => {
     } else handlePasswordReset(e);
   };
 
-  const [btn3,setBtn3] = useState("Forgot Password");
+  const [btn3, setBtn3] = useState("Forgot Password");
   const checkUser = auth.onAuthStateChanged((user) => {
     if (user) {
-      setBtn3('Reset Password')
+      setBtn3("Reset Password");
     }
   });
   checkUser();
@@ -79,7 +79,7 @@ export const Forgotpass = () => {
             Next
           </button>
           <p className="signup">
-            <Link className="linksign" to="/">
+            <Link className="linksign" to="/signin">
               Back
             </Link>
           </p>
